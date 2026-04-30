@@ -1,0 +1,507 @@
+/* Main Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #e94560;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #e94560;
+}
+
+header p {
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Screens */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Welcome Screen */
+.welcome-content {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.welcome-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.course-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: rgba(233, 69, 96, 0.1);
+    border: 2px solid #e94560;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.info-card .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.info-card .label {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-small {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: #e94560;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-small {
+    background: transparent;
+    color: #e94560;
+    border: 1px solid #e94560;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-small:hover {
+    background: rgba(233, 69, 96, 0.1);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Lecture Screen */
+.lecture-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lecture-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.progress-indicator {
+    color: #aaa;
+}
+
+#progress-text {
+    color: #e94560;
+    font-weight: bold;
+}
+
+.lecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.lecture-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lecture-card:hover {
+    border-color: #e94560;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lecture-card.completed {
+    border-color: #4caf50;
+}
+
+.lecture-card.completed::after {
+    content: ' ✓';
+    color: #4caf50;
+    font-size: 1.2rem;
+}
+
+.lecture-number {
+    display: block;
+    font-size: 0.9rem;
+    color: #e94560;
+    margin-bottom: 0.5rem;
+}
+
+.lecture-title {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.lecture-description {
+    display: block;
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Lesson Screen */
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.lesson-header h2 {
+    font-size: 1.5rem;
+}
+
+.lesson-progress {
+    color: #aaa;
+}
+
+#current-lesson {
+    color: #e94560;
+    font-weight: bold;
+}
+
+.lesson-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    min-height: 300px;
+}
+
+.lesson-text h3 {
+    color: #e94560;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.lesson-text h3:first-child {
+    margin-top: 0;
+}
+
+.lesson-text p {
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.lesson-text ul, .lesson-text ol {
+    margin: 1rem 0 1rem 2rem;
+    color: #ddd;
+}
+
+.lesson-text li {
+    margin-bottom: 0.5rem;
+}
+
+.lesson-text code {
+    background: rgba(233, 69, 96, 0.2);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #e94560;
+}
+
+.lesson-text pre {
+    background: #1a1a2e;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.lesson-text pre code {
+    background: none;
+    padding: 0;
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Quiz Screen */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quiz-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.quiz-progress {
+    color: #aaa;
+}
+
+#current-question {
+    color: #e94560;
+    font-weight: bold;
+}
+
+.quiz-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    border-color: #e94560;
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.option.selected {
+    border-color: #e94560;
+    background: rgba(233, 69, 96, 0.2);
+}
+
+.option.correct {
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.option.incorrect {
+    border-color: #f44336;
+    background: rgba(244, 67, 54, 0.2);
+}
+
+.quiz-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    display: none;
+}
+
+.quiz-feedback.show {
+    display: block;
+}
+
+.quiz-feedback.correct {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+}
+
+.quiz-feedback.incorrect {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Results Screen */
+.results-content {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.results-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e94560;
+}
+
+.score-display {
+    margin: 2rem 0;
+}
+
+#score-text {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+#percentage-text {
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.score-message {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Lecture Complete Screen */
+.lecture-complete-content {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.lecture-complete-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4caf50;
+}
+
+.lecture-complete-content p {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.lecture-complete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    .welcome-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .course-info {
+        gap: 1rem;
+    }
+
+    .lecture-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lesson-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lesson-nav, .quiz-nav {
+        flex-direction: column;
+    }
+
+    .lecture-complete-actions {
+        flex-direction: column;
+    }
+}

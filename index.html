@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Fundamentals - Educational Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🐧 Linux Fundamentals</h1>
+        <p>Learn Linux from scratch to advanced</p>
+    </header>
+
+    <main>
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h2>Welcome to Linux Learning Platform</h2>
+                <p>Master Linux with 12 comprehensive lectures and interactive quizzes.</p>
+                <div class="course-info">
+                    <div class="info-card">
+                        <span class="number">12</span>
+                        <span class="label">Lectures</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="number">60</span>
+                        <span class="label">Lessons</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="number">120</span>
+                        <span class="label">Quiz Questions</span>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn-primary">Start Learning</button>
+            </div>
+        </section>
+
+        <!-- Lecture List Screen -->
+        <section id="lecture-screen" class="screen">
+            <div class="lecture-header">
+                <h2>Choose a Lecture</h2>
+                <div class="progress-indicator">
+                    <span>Progress: </span>
+                    <span id="progress-text">0/12 Lectures Completed</span>
+                </div>
+            </div>
+            <div id="lecture-grid" class="lecture-grid"></div>
+            <button id="back-to-welcome" class="btn-secondary">Back to Home</button>
+        </section>
+
+        <!-- Lesson Screen -->
+        <section id="lesson-screen" class="screen">
+            <div class="lesson-header">
+                <button id="back-to-lectures" class="btn-small">← Back to Lectures</button>
+                <h2 id="lesson-title">Lecture 1: Introduction to Linux</h2>
+                <div class="lesson-progress">
+                    <span>Lesson </span>
+                    <span id="current-lesson">1</span>
+                    <span> of 5</span>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div id="lesson-text" class="lesson-text"></div>
+            </div>
+            <div class="lesson-nav">
+                <button id="prev-lesson" class="btn-secondary">← Previous</button>
+                <button id="next-lesson" class="btn-primary">Next Lesson →</button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h2 id="quiz-title">Quiz: Lecture 1</h2>
+                <div class="quiz-progress">
+                    <span>Question </span>
+                    <span id="current-question">1</span>
+                    <span> of 10</span>
+                </div>
+            </div>
+            <div class="quiz-content">
+                <div id="question-text" class="question-text"></div>
+                <div id="options-container" class="options-container"></div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+            </div>
+            <div class="quiz-nav">
+                <button id="prev-question" class="btn-secondary" disabled>← Previous</button>
+                <button id="next-question" class="btn-primary" disabled>Next Question →</button>
+            </div>
+        </section>
+
+        <!-- Quiz Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="results-content">
+                <h2>Quiz Complete!</h2>
+                <div class="score-display">
+                    <span id="score-text">Your Score: 8/10</span>
+                    <span id="percentage-text">80%</span>
+                </div>
+                <div id="score-message" class="score-message"></div>
+                <div class="results-actions">
+                    <button id="retry-quiz" class="btn-secondary">Retry Quiz</button>
+                    <button id="back-to-lessons" class="btn-primary">Back to Lessons</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture Complete Screen -->
+        <section id="lecture-complete-screen" class="screen">
+            <div class="lecture-complete-content">
+                <h2>🎉 Lecture Complete!</h2>
+                <p>You have finished all lessons in this lecture.</p>
+                <p>Ready to test your knowledge?</p>
+                <div class="lecture-complete-actions">
+                    <button id="review-lessons" class="btn-secondary">Review Lessons</button>
+                    <button id="start-quiz" class="btn-primary">Take Quiz</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Linux Educational Platform © 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
